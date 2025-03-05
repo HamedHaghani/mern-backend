@@ -6,6 +6,7 @@ const cors = require('cors');
 const projectRoutes = require("./routes/projectRoutes")
 const contactRoutes = require("./routes/contactRoutes")
 
+
 dotenv.config();
 
 const app = express();
@@ -13,6 +14,8 @@ app.use(express.json());
 app.use(cors());
 app.use("/api/projects", projectRoutes);
 app.use("/api/contact", contactRoutes);
+app.use("/images", express.static("public/images"));
+
 
 
 
